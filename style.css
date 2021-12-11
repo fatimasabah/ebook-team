@@ -3,8 +3,8 @@
 :root {
     /* --color-primary: #ddbea9; */
     /* --color-primary: #3d5a80; */
-    --color-primary: #3c096c;
-    /* --color-primary:#5a189a; */
+    /* --color-primary: #3c096c; */
+    --color-primary:#5a189a;
     --color-secondry: ;
     --color-white: ;
     --color-dark: ;
@@ -240,8 +240,16 @@ body {
     position: relative;
     margin: 0 5px;
     line-height: 50px;
-    font-size: 20px;
+    font-size: 22px;
 }
+
+/* .sidebar ul li .tooltip{
+    position: absolute;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(255, green, blue, alpha);
+} */
 .sidebar .link-name{
     opacity: 0;
     pointer-events: none;
@@ -332,6 +340,7 @@ body {
     color: #fff;
     bottom: 0;
     left: 0;
+    width: 100%;
 }
 
 .sidebar .profile-content .profile {
@@ -344,6 +353,14 @@ body {
 .sidebar .profile .profile-details {
     display: flex;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.sidebar.active .profile .profile-details{
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .profile .profile-details img {
@@ -368,16 +385,31 @@ body {
 
 .profile #log-out {
     position: absolute;
-    left: 88%;
+    left: 50%;
     bottom: 5px;
     transform: translateX(-50%);
     min-width: 50px;
     line-height: 50px;
     font-size: 20px;
     border-radius: 12px;
+    text-align: center;
 }
 
-.home-content {}
+.sidebar.active .profile #log-out{
+    left: 88%;
+}
+.home-content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 240px);
+    left: 240px;
+}
+.home-content .home-text{
+    font-size: 25px;
+    font-weight: 500;
+    color: #11101d;
+    margin-top: 12px;
+}
 
 /*end siddebar  */
 /* start login style */
